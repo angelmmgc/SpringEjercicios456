@@ -1,0 +1,31 @@
+    //obtenemos las cabeceras header
+    @PostMapping("/api/headers")
+    public ResponseEntity<Laptop> saveLaptopHeaders(@RequestBody Laptop laptop, @RequestHeader HttpHeaders headers){
+
+        System.out.println(headers.get("User-Agent"));
+        //guardo el laptop que paso por parametro
+
+        if(laptop.getId()!=null){//quiere decir que existe el id y por lo tanto no se esta creando nuevo
+            log.warn("trying to create a laptop with id");
+            System.out.println("trying to create a laptop with id");
+            return ResponseEntity.badRequest().build();
+        }
+        Laptop result = laptopRepoitory.save(laptop);
+        return ResponseEntity.ok(result);
+
+
+    }
+
+
+       private final Logger log = LoggerFactory.getLogger(LaptopController);
+
+         //obtenemos las cabeceras header
+           @PostMapping("/api/headers")
+           public Laptop saveLaptopHeaders(@RequestBody Laptop laptop, @RequestHeader HttpHeaders headers){
+
+               System.out.println(headers.get("User-Agent"));
+               //guardo el laptop que paso por parametro
+
+               return laptopRepoitory.save(laptop);
+
+           }
