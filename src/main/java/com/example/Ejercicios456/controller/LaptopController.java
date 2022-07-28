@@ -4,7 +4,6 @@ import com.example.Ejercicios456.entities.Laptop;
 import com.example.Ejercicios456.model.LaptopRepoitory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.boot.autoconfigure.graphql.GraphQlProperties;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
